@@ -42,44 +42,59 @@ const pages = {
       </div>
     </section>
   `,
-  equipe: `
-    <section class="page-section">
-      <h1>Notre équipe</h1>
-      <div class="team-grid">
+ // Remplace le contenu de `pages.equipe` par ceci :
+equipe: `
+  <section class="page-section">
+    <h1>Organigramme Agence Sud 2025</h1>
+    <div class="orga-grid">
+      <!-- Direction -->
+      <div class="orga-group">
+        <h2>Direction</h2>
         <div class="team-card">
           <img src="images/samuel-turle.jpg" alt="Samuel TURLE">
           <h3>Samuel TURLE</h3>
           <p>Directeur Général</p>
         </div>
+      </div>
+      <!-- Technique -->
+      <div class="orga-group">
+        <h2>Direction Technique</h2>
+        <div class="team-card">
+          <img src="images/pierre-barneoud.jpg" alt="Pierre BARNEOUD-ROUSSET">
+          <h3>Pierre BARNEOUD-ROUSSET</h3>
+          <p>Directeur Technique</p>
+        </div>
+      </div>
+      <!-- Support -->
+      <div class="orga-group">
+        <h2>Support</h2>
+        <div class="team-card">
+          <img src="images/alexandra-turle.jpg" alt="Alexandra TURLE">
+          <h3>Alexandra TURLE</h3>
+          <p>RH & Administratif</p>
+        </div>
+        <div class="team-card">
+          <img src="images/jennifer-bonnard.jpg" alt="Jennifer BONNARD">
+          <h3>Jennifer BONNARD</h3>
+          <p>Comptabilité</p>
+        </div>
+      </div>
+      <!-- SUD -->
+      <div class="orga-group">
+        <h2>Sud</h2>
         <div class="team-card">
           <img src="images/stephane-castells.jpg" alt="Stéphane CASTELLS">
           <h3>Stéphane CASTELLS</h3>
-          <p>Responsable Région Sud</p>
+          <p>Responsable Région Sud & Matériel</p>
         </div>
+      </div>
+      <!-- Support Sud -->
+      <div class="orga-group">
+        <h2>Support Sud</h2>
         <div class="team-card">
-          <img src="images/pierre-barneoud.jpg" alt="Pierre BARNEOUD">
-          <h3>Pierre BARNEOUD</h3>
-          <p>Directeur Technique</p>
-        </div>
-        <div class="team-card">
-          <img src="images/sarah-texier.jpg" alt="Sarah TEXIER">
-          <h3>Sarah TEXIER</h3>
-          <p>Responsable Agence La Garde</p>
-        </div>
-        <div class="team-card">
-          <img src="images/zayad-kaddouri.jpg" alt="Zayad KADDOURI">
-          <h3>Zayad KADDOURI</h3>
-          <p>Responsable Agence Éguilles</p>
-        </div>
-        <div class="team-card">
-          <img src="images/kevin-fagot.jpg" alt="Kévin FAGOT">
-          <h3>Kévin FAGOT</h3>
-          <p>Ingénieur Géotechnicien</p>
-        </div>
-        <div class="team-card">
-          <img src="images/emilie-mus.jpg" alt="Émilie MUS">
-          <h3>Émilie MUS</h3>
-          <p>Responsable Production Sud</p>
+          <img src="images/clara-pasquini.jpg" alt="Clara PASQUINI">
+          <h3>Clara PASQUINI</h3>
+          <p>Secrétariat</p>
         </div>
         <div class="team-card">
           <img src="images/alexandra-petit.jpg" alt="Alexandra PETIT">
@@ -87,11 +102,57 @@ const pages = {
           <p>Assistante Chargée d’Affaires</p>
         </div>
       </div>
-      <p style="margin-top:2em;color:#888;text-align:center;">
-        <!-- Pour ajouter ou changer des photos, place-les dans /images et modifie le src ci-dessus -->
-      </p>
-    </section>
-  `,
+      <!-- Production Sud -->
+      <div class="orga-group">
+        <h2>Production Sud</h2>
+        <div class="team-card">
+          <img src="images/emilie-mus.jpg" alt="Émilie MUS">
+          <h3>Émilie MUS</h3>
+          <p>Responsable production groupe Région Sud</p>
+        </div>
+      </div>
+      <!-- Agences & Travaux -->
+      <div class="orga-group">
+        <h2>Agences / Travaux</h2>
+        <div class="orga-sub">
+          <h3>Toulouse</h3>
+          <div class="team-card"><h4>Kévin FAGOT</h4><p>Chargé d’Affaires</p></div>
+        </div>
+        <div class="orga-sub">
+          <h3>Toulon</h3>
+          <div class="team-card"><h4>Sarah TEXIER</h4><p>Responsable Toulon</p></div>
+          <div class="team-card"><h4>Thibaut DRUMEZ</h4><p>Chargé d’Affaires</p></div>
+          <div class="team-card"><h4>Samir MOUDEN</h4><p>Chargé d’Affaires</p></div>
+        </div>
+        <div class="orga-sub">
+          <h3>Aix-en-Provence</h3>
+          <div class="team-card"><h4>Zayad KADDOURI</h4><p>Responsable Agence Aix</p></div>
+          <div class="team-card"><h4>Babacar NDIAYE</h4><p>Chargé d’Affaires</p></div>
+        </div>
+        <div class="orga-sub">
+          <h3>Conduite Travaux</h3>
+          <div class="team-card"><h4>Alexis LARIVE</h4><p>Conducteur de Travaux</p></div>
+          <div class="team-card"><h4>Laurent BOUCHON</h4><p>Équipe 1 – EMCI 450.2 & Formation</p></div>
+        </div>
+        <div class="orga-sub">
+          <h3>Équipes Travaux</h3>
+          <div class="team-card"><h4>Yves SERVAJAN</h4><p>Équipe 2 – GE0205</p></div>
+          <div class="team-card"><h4>Mensah AHIALE</h4><p>Aide</p></div>
+          <div class="team-card"><h4>Chérif TIDJANE</h4><p>Équipe 4 – PAGANI</p></div>
+          <div class="team-card"><h4>Michel BLANCHARD</h4><p>Équipe 5 – GE0205</p></div>
+          <div class="team-card"><h4>Adam BLANCHARD</h4><p>Aide</p></div>
+          <div class="team-card"><h4>Nicolas MASUYER</h4><p>Équipe 6 – 450.4</p></div>
+          <div class="team-card"><h4>Benoît BOUCHON</h4><p>Aide</p></div>
+          <div class="team-card"><h4>Didier DEBONO</h4><p>Équipe 3 – EMCI 450.1</p></div>
+          <div class="team-card"><h4>Hugo VILLENAVE</h4><p>Aide</p></div>
+        </div>
+      </div>
+    </div>
+    <p style="margin-top:2em;color:#888;text-align:center;">
+      <!-- Pour ajouter ou changer des photos, place-les dans /images et modifie le src ci-dessus -->
+    </p>
+  </section>
+`,
   contact: `
     <section class="page-section">
       <h1>Contactez-nous</h1>
