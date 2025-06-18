@@ -47,37 +47,37 @@ const pages = {
       <h1>Notre équipe</h1>
       <div class="team-grid" id="team-grid">
         <div class="team-card" data-member="samuel">
-          <img src="https://randomuser.me/api/portraits/men/11.jpg" alt="Samuel Turle">
+          
           <h3>Samuel Turle</h3>
           <p>Directeur Général</p>
           <a href="mailto:samuel.turle@email.com">samuel.turle@email.com</a>
         </div>
         <div class="team-card" data-member="pierre">
-          <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Pierre Barneoud-Rousset">
+         
           <h3>Pierre Barneoud-Rousset</h3>
           <p>Directeur Technique</p>
           <a href="mailto:pierre.barneoud@email.com">pierre.barneoud@email.com</a>
         </div>
         <div class="team-card" data-member="stephane">
-          <img src="https://randomuser.me/api/portraits/men/33.jpg" alt="Stéphane Castells">
+          
           <h3>Stéphane Castells</h3>
           <p>Responsable Projet</p>
           <a href="mailto:stephane.castells@email.com">stephane.castells@email.com</a>
         </div>
         <div class="team-card" data-member="sarah">
-          <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah Texier">
+          
           <h3>Sarah Texier</h3>
           <p>Responsable Toulon</p>
           <a href="mailto:sarah.texier@email.com">sarah.texier@email.com</a>
         </div>
         <div class="team-card" data-member="zayad">
-          <img src="https://randomuser.me/api/portraits/men/55.jpg" alt="Zayad Kaddouri">
+          
           <h3>Zayad Kaddouri</h3>
           <p>Responsable Aix</p>
           <a href="mailto:zayad.kaddouri@email.com">zayad.kaddouri@email.com</a>
         </div>
         <div class="team-card" data-member="kevin">
-          <img src="https://randomuser.me/api/portraits/men/66.jpg" alt="Kévin Fagot">
+          
           <h3>Kévin Fagot</h3>
           <p>Chargé d'Affaires</p>
           <a href="mailto:kevin.fagot@email.com">kevin.fagot@email.com</a>
