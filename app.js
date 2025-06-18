@@ -10,7 +10,7 @@ const pages = {
   apropos: `
     <section class="page-section">
       <h1>À propos de GÉOTERRIA</h1>
-      <p>Créée en 1998, intégrée au groupe GEOSUP depuis 2020, GÉOTERRIA est un bureau d’études indépendant basé à La Garde et Éguilles. Spécialisée dans les missions G1 à G5, l’hydrogéologie et l’environnement.</p>
+      <p>Créée en 1998, intégrée au groupe GEOSUP depuis 2020, GÉOTERRIA est un bureau d’études indépendant basé à La Garde et Éguilles. Spécialisée dans les missions G1 à G5, l’histoire de l’entreprise s’inscrit dans une démarche de qualité et d’innovation.</p>
       <h2>Nos engagements</h2>
       <ul>
         <li><strong>Qualité :</strong> Conformité NF-P94-500, encadrement technique rigoureux.</li>
@@ -87,9 +87,7 @@ const pages = {
       <div id="member-modal" class="modal" style="display:none;">
         <div class="modal-content">
           <span class="close-modal" id="close-modal">&times;</span>
-          <div id="modal-body">
-            <!-- contenu dynamique -->
-          </div>
+          <div id="modal-body"></div>
         </div>
       </div>
     </section>
@@ -120,7 +118,74 @@ const pages = {
   `
 };
 
-// --- Navigation et interaction SPA ---
+// --- Modal équipe ---
+function showMemberModal(memberKey) {
+  const memberData = {
+    samuel: {
+      nom: "Samuel Turle",
+      role: "Directeur Général",
+      photo: "https://randomuser.me/api/portraits/men/11.jpg",
+      mail: "samuel.turle@email.com",
+      parcours: "Parcours placeholder pour Samuel.",
+      missions: "Missions réalisées : Direction générale, pilotage des projets, etc."
+    },
+    pierre: {
+      nom: "Pierre Barneoud-Rousset",
+      role: "Directeur Technique",
+      photo: "https://randomuser.me/api/portraits/men/22.jpg",
+      mail: "pierre.barneoud@email.com",
+      parcours: "Parcours placeholder pour Pierre.",
+      missions: "Missions : supervision technique, innovation, etc."
+    },
+    stephane: {
+      nom: "Stéphane Castells",
+      role: "Responsable Projet",
+      photo: "https://randomuser.me/api/portraits/men/33.jpg",
+      mail: "stephane.castells@email.com",
+      parcours: "Parcours placeholder pour Stéphane.",
+      missions: "Missions : gestion de projet, accompagnement client, etc."
+    },
+    sarah: {
+      nom: "Sarah Texier",
+      role: "Responsable Toulon",
+      photo: "https://randomuser.me/api/portraits/women/44.jpg",
+      mail: "sarah.texier@email.com",
+      parcours: "Parcours placeholder pour Sarah.",
+      missions: "Missions : gestion de l'agence Toulon, relation client, etc."
+    },
+    zayad: {
+      nom: "Zayad Kaddouri",
+      role: "Responsable Aix",
+      photo: "https://randomuser.me/api/portraits/men/55.jpg",
+      mail: "zayad.kaddouri@email.com",
+      parcours: "Parcours placeholder pour Zayad.",
+      missions: "Missions : développement agence Aix, suivi chantiers, etc."
+    },
+    kevin: {
+      nom: "Kévin Fagot",
+      role: "Chargé d'Affaires",
+      photo: "https://randomuser.me/api/portraits/men/66.jpg",
+      mail: "kevin.fagot@email.com",
+      parcours: "Parcours placeholder pour Kévin.",
+      missions: "Missions : développement commercial, gestion dossiers clients, etc."
+    }
+  };
+  const m = memberData[memberKey];
+  if (!m) return;
+  document.getElementById('modal-body').innerHTML = `
+    <div class="modal-profile">
+      <img src="${m.photo}" alt="${m.nom}">
+      <h2>${m.nom}</h2>
+      <h4>${m.role}</h4>
+      <p><b>Mail :</b> <a href="mailto:${m.mail}">${m.mail}</a></p>
+      <p><b>Parcours :</b> ${m.parcours}</p>
+      <p><b>Missions accomplies :</b> ${m.missions}</p>
+    </div>
+  `;
+  document.getElementById('member-modal').style.display = 'flex';
+}
+
+// --- Navigation SPA ---
 function loadPage(page) {
   const content = document.getElementById('main-content');
   content.innerHTML = pages[page] || pages.accueil;
@@ -128,6 +193,7 @@ function loadPage(page) {
     link.classList.toggle('active', link.dataset.page === page);
   });
 
+  // Focus main for accessibility
   if (content) content.focus?.();
 
   // Contact form feedback
@@ -180,130 +246,6 @@ function setupNav() {
       e.preventDefault();
       loadPage(link.dataset.page);
       window.scrollTo({top: 0, behavior: 'smooth'});
-    });
-  });
-  // burger menu pour mobile
-  const burger = document.getElementById('burger-menu');
-  const navLinks = document.getElementById('nav-links');
-  if (burger && navLinks) {
-    burger.addEventListener('click', () => {
-      navLinks.classList.toggle('show');
-    });
-  }
-}
-
-window.addEventListener('DOMContentLoaded', () => {
-  setupNav();
-  loadPage('accueil');
-});
-
-// --- Fiche modale membre équipe ---
-function showMemberModal(memberKey) {
-  const memberData = {
-    samuel: {
-      nom: "Samuel Turle",
-      role: "Directeur Général",
-      photo: "https://randomuser.me/api/portraits/men/11.jpg",
-      mail: "samuel.turle@email.com",
-      parcours: "Parcours placeholder pour Samuel.",
-      missions: "Missions réalisées : Direction générale, pilotage des projets, etc."
-    },
-    pierre: {
-      nom: "Pierre Barneoud-Rousset",
-      role: "Directeur Technique",
-      photo: "https://randomuser.me/api/portraits/men/22.jpg",
-      mail: "pierre.barneoud@email.com",
-      parcours: "Parcours placeholder pour Pierre.",
-      missions: "Missions : supervision technique, innovation, etc."
-    },
-    stephane: {
-      nom: "Stéphane Castells",
-      role: "Responsable Projet",
-      photo: "https://randomuser.me/api/portraits/men/33.jpg",
-      mail: "stephane.castells@email.com",
-      parcours: "Parcours placeholder pour Stéphane.",
-      missions: "Missions : gestion de projet, accompagnement client, etc."
-    },
-    sarah: {
-      nom: "Sarah Texier",
-      role: "Responsable Toulon",
-      photo: "https://randomuser.me/api/portraits/women/44.jpg",
-      mail: "sarah.texier@email.com",
-      parcours: "Parcours placeholder pour Sarah.",
-      missions: "Missions : gestion de l'agence Toulon, relation client, etc."
-    },
-    zayad: {
-      nom: "Zayad Kaddouri",
-      role: "Responsable Aix",
-      photo: "https://randomuser.me/api/portraits/men/55.jpg",
-      mail: "zayad.kaddouri@email.com",
-      parcours: "Parcours placeholder pour Zayad.",
-      missions: "Missions : développement agence Aix, suivi chantiers, etc."
-    },
-    kevin: {
-      nom: "Kévin Fagot",
-      role: "Chargé d'Affaires",
-      photo: "https://randomuser.me/api/portraits/men/66.jpg",
-      mail: "kevin.fagot@email.com",
-      parcours: "Parcours placeholder pour Kévin.",
-      missions: "Missions : développement commercial, gestion dossiers clients, etc."
-    },
-  };
-  const m = memberData[memberKey];
-  if (!m) return;
-  document.getElementById('modal-body').innerHTML = `
-    <div class="modal-profile">
-      <img src="${m.photo}" alt="${m.nom}">
-      <h2>${m.nom}</h2>
-      <h4>${m.role}</h4>
-      <p><b>Mail :</b> <a href="mailto:${m.mail}">${m.mail}</a></p>
-      <p><b>Parcours :</b> ${m.parcours}</p>
-      <p><b>Missions accomplies :</b> ${m.missions}</p>
-    </div>
-  `;
-  document.getElementById('member-modal').style.display = 'flex';
-}
-
-function loadPage(page) {
-  const content = document.getElementById('main-content');
-  content.innerHTML = pages[page] || pages.accueil;
-  document.querySelectorAll('.nav-links a').forEach(link => {
-    link.classList.toggle('active', link.dataset.page === page);
-  });
-
-  // Focus main for accessibility
-  if (content) content.focus?.();
-
-  // Contact form feedback
-  if (page === "contact") {
-    const form = document.getElementById("contact-form");
-    const msg = document.getElementById("msg-sent");
-    if (form && msg) {
-      form.addEventListener("submit", e => {
-        e.preventDefault();
-        msg.style.display = "block";
-        setTimeout(() => { msg.style.display = "none"; }, 3500);
-        form.reset();
-      });
-    }
-  }
-
-  // CTA scroll
-  document.querySelectorAll('.cta[data-page]').forEach(link => {
-    link.addEventListener('click', e => {
-      e.preventDefault();
-      loadPage(link.dataset.page);
-      window.scrollTo({top: 0, behavior: 'smooth'});
-    });
-  });
-}
-
-function setupNav() {
-  document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', e => {
-      e.preventDefault();
-      loadPage(link.dataset.page);
-      window.scrollTo({top: 0, behavior: 'smooth'});
       if (window.innerWidth < 900) document.getElementById('nav-links').classList.remove('show');
     });
   });
@@ -312,9 +254,11 @@ function setupNav() {
 function setupBurger() {
   const burger = document.getElementById('burger-menu');
   const nav = document.getElementById('nav-links');
-  burger.addEventListener('click', () => {
-    nav.classList.toggle('show');
-  });
+  if (burger && nav) {
+    burger.addEventListener('click', () => {
+      nav.classList.toggle('show');
+    });
+  }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
