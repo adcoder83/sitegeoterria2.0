@@ -258,6 +258,7 @@ footer {
   .hero, .page-section { padding: 1rem; }
   .logo { font-size: 1.1rem; }
 }
+
 /* Ajoute à la fin de style.css pour les styles de l'organigramme */
 .orga-grid {
   display: flex;
