@@ -1,32 +1,46 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Géoterria - Bureau d'études géotechniques</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>GÉOTERRIA - Expertise Géotechnique</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Favicon (optional) -->
+  <link rel="icon" type="image/png" href="favicon.png">
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-            <div class="logo">GÉOTERRIA</div>
-            <ul class="nav-links" id="nav-links">
-                <li><a href="#accueil" class="active" data-page="accueil">Accueil</a></li>
-                <li><a href="#apropos" data-page="apropos">À propos</a></li>
-                <li><a href="#prestations" data-page="prestations">Prestations</a></li>
-                <li><a href="#equipe" data-page="equipe">Équipe</a></li>
-                <li><a href="#contact" data-page="contact">Contact</a></li>
-            </ul>
-            <div class="burger" id="burger-menu">
-                <span></span><span></span><span></span>
-            </div>
-        </nav>
-    </header>
-    <main id="main-content"></main>
-    <footer>
-        <p>&copy; 2025 Géoterria - Tous droits réservés</p>
-    </footer>
-    <script src="app.js"></script>
+  <!-- Navigation -->
+  <header>
+    <nav class="main-nav">
+      <div class="logo">
+        <img src="images/logo-geoterria.png" alt="GÉOTERRIA" style="height:48px;">
+      </div>
+      <div id="burger-menu" class="burger-menu" aria-label="Menu" tabindex="0">☰</div>
+      <div class="nav-links" id="nav-links">
+        <a href="#accueil" data-page="accueil" class="active">Accueil</a>
+        <a href="#apropos" data-page="apropos">À propos</a>
+        <a href="#prestations" data-page="prestations">Prestations</a>
+        <a href="#equipe" data-page="equipe">Équipe</a>
+        <a href="#contact" data-page="contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Content Area -->
+  <main id="main-content" tabindex="0" aria-live="polite"></main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2025 GÉOTERRIA – Bureau d’études géotechniques. Tous droits réservés.</p>
+      <p>
+        <a href="mailto:contact@geoterria.com">contact@geoterria.com</a> | 
+        42 Avenue Irène et Jean Frédéric Joliot Curie, 83130 La Garde
+      </p>
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script src="app.js"></script>
 </body>
 </html>
